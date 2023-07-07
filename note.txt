@@ -1,0 +1,7 @@
+# On system for analysis
+
+# Export the path to the binaries and libraries, probably from a usb
+export PATH=/mnt/usb/bin:/mnt/usb/sbin
+export LD_LIBRARY_PATH=/mnt/usb/lib:/mnt/usb/lib64
+
+# Go forth and conduct analysis
