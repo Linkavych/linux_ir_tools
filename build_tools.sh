@@ -18,14 +18,20 @@
 #==============================================================================#
 # Execute this script from within the directory with the Vagrantfile
 
+echo "[+] Starting vagrant..."
+
 vagrant up
 
 # Create checksums
 sleep 1
 
+echo "[+] Creating checksums..."
+
 find data/ -type f -exec sha256sum {} \; | sort -k2 > checksums.txt
 
-#tar cJf 4n6_binaries.tar.xz data/bin data/sbin data/lib data/lib64 checksums.txt note.txt
+echo "Compressing binaries and libraries..."
+
+tar cJf 4n6_binaries.tar.xz data/bin data/sbin data/lib data/lib64 checksums.txt note.txt
 
 sleep 1
 
